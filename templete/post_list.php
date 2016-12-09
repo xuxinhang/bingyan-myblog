@@ -14,7 +14,7 @@ $posts_pre_page = 2;
 $start_index = ($page-1)*$posts_pre_page;
 $end_index = $page*$posts_pre_page;
 
-echo $start_index,$posts_pre_page;
+//echo $start_index,$posts_pre_page;
 
 $post_list = get_post_list($start_index, $posts_pre_page);
 

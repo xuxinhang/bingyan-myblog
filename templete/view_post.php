@@ -7,7 +7,7 @@ $pid = isset($_GET['pid'])?intval($_GET['pid']):0;
 if(isset($_POST['comment_submit'])){
 	$res = add_comment($pid, $_POST['title'], $_POST['content']);
 	if($res){
-		echo '发表评论成功！';
+		echo '<script>alert("发表评论成功！");</script>';
 	}
 }
 
@@ -19,7 +19,7 @@ $pd = fetch_post($pid);
 if(empty($pd)){
 	echo '找不到文章';
 }else{
-	var_dump($pd);
+	//var_dump($pd);
 ?>
 
 <div class="post_main_page">
