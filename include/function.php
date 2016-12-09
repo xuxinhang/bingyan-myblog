@@ -56,15 +56,24 @@ function fetch_post($pid){
 		'pid'=>$row['pid'],
 		'title'=>$row['title'],
 		'content'=>$row['content'],
+		'timestamp'=>$row['timestamp'],
 		);
 
 	return  $data;
 }
 
 
-function get_post_list(){
+function get_post_list($start_index = null, $end_index = null){
+
+	echo $start_index, $end_index;
+
 	$sql = "SELECT * FROM `posts` ORDER BY `timestamp` DESC ";
+	if($start_index!==null && $end_index!==null){
+		$sql .= " LIMIT $start_index , $end_index";
+	}
 	$result = db_query($sql);
+
+	echo $sql;
 
 	$post_list =array();
 	while($row =  $result->fetch_array()){
@@ -153,5 +162,28 @@ function checkLogin(){
 function linkToLogin(){
 	echo '请先登录';
 }
+
+
+function transTime($ustime){
+	$ytime = date("Y-m-d H:i",$ustime);              
+	$rtime = date("n月j日 H:i",$ustime);            
+	$htime = date("H:i",$ustime);            
+	$time = time() - $ustime;            
+	$todaytime = strtotime("today");            
+	$time1 = time() - $todaytime;                            
+	if($time < 60){                    
+		$str = '刚刚';            
+	}else if($time < 60 * 60){                             
+		$min = floor($time/60);                    
+		$str = $min.'分钟前';            
+	}else if($time < $time1){                    
+		$str = '今天 '.$htime;            
+	}else{                    
+		$str = $rtime;            
+	}              
+	return $str;
+}
+
+
 
 

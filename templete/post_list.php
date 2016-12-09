@@ -1,9 +1,24 @@
 <?php
 include 'header.php';
 
-$post_list = get_post_list();
+function getPageLink($page_index){
+	$new_url = "index.php?page={$page_index}";
+	return $new_url;
+}
 
-var_dump($post_list);
+
+$page = isset($_GET['page'])?intval($_GET['page']):1;
+$page = $page<1?1:$page;
+
+$posts_pre_page = 2;
+$start_index = ($page-1)*$posts_pre_page;
+$end_index = $page*$posts_pre_page;
+
+echo $start_index,$posts_pre_page;
+
+$post_list = get_post_list($start_index, $posts_pre_page);
+
+//var_dump($post_list);
 
 ?>
 
@@ -11,45 +26,54 @@ var_dump($post_list);
 
 <nav class="sidebar">
 	<div class="side-block">
-		<h2>ฟชสผ</h2>
+		<h2>ๅผ€ๅง</h2>
 		<ul class="func-list">
-			<li><a href="index.php">สืาณ</a></li>
-			<li><a href="">ฮฤียน้ตต</a></li>
-			<li><a href="">ื๎ะยฦภยÛ</a></li>
-			<li><a href="admin/">นÜภํฦฝฬจ</a></li>
+			<li><a href="index.php">้ฆ–้กต</a></li>
+			<li><a href="">ๆ–็ซ ๅฝ’ๆกฃ</a></li>
+			<li><a href="">ๆ€ๆ–ฐ่ฏ่ฎบ</a></li>
+			<li><a href="admin/">็ฎก็ๅนณๅฐ</a></li>
 		</ul>
 	</div>
 </nav>
 
 
-<h1></h1>
 <div id="page-body">
-
-<section id="main">
-<ul>
-
+	<section id="main">
+	<ul>
 <?php 
 foreach ($post_list as $post_info){
 ?>
 
-<li class="post_list_item">
-	<div class="post_head">
-		<h3 class="post_title">
-			<a href="index.php?do=viewpost&pid=<?php echo $post_info['pid']; ?>">
-			<?php echo $post_info['title'];?>
-			</a>
-		</h3>
-		<div class="post_time"><?php echo $post_info['timestamp'];?></div>
-	</div>
-	<div class="post_block">
-		<p class="post_part"><?php echo $post_info['content'];?></p>
-	</div>
-</li>
+	<li class="post_list_item">
+		<div class="post_head">
+			<h3 class="post_title">
+				<a href="index.php?do=viewpost&pid=<?php echo $post_info['pid']; ?>">
+				<?php echo $post_info['title'];?>
+				</a>
+			</h3>
+			<div class="post_time"><?php echo transTime($post_info['timestamp']);?></div>
+			<div class="dot_btn"></div>
+		</div>
+		<div class="post_block">
+			<p class="post_part"><?php echo $post_info['content'];?></p>
+		</div>
+	</li>
 
 <?php
 }
 ?>
 
-</section>
+	</section>
+
+	<div class="page_jump">
+		<span class="previous_page"><a href="<?php echo getPageLink($page-1); ?>">ไธไธ€้กต</a></span>
+		<span class="next_page"><a href="<?php echo getPageLink($page+1); ?>">ไธไธ€้กต</a></span>
+	</div>
 
 </div>
+
+<div style="clear:both;"></div>
+
+<?php
+include 'footer.php';
+

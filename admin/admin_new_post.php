@@ -1,6 +1,5 @@
 <?php
 
-
 if(isset($_POST['submit'])){
 	$title = $_POST['title'];
 	$content = $_POST['content'];
@@ -35,21 +34,22 @@ if(isset($_POST['submit'])){
 		}
 
 	}else{
-		$pre_data = array('pid'=>'new','title'=>'New Post ...','content'=>'',);
+		$pre_data = array('pid'=>'new','title'=>'','content'=>'',);
 	}
 
 ?>
 
 
 
-<div class="form-area">
-<form method="post" action="">
-	<input type="text" name="title" value="<?php echo $pre_data['title']; ?>">
-	<textarea name="content" rows="" cols=""><?php echo $pre_data['content']; ?></textarea>
-	<input type="hidden" name="edit_pid" value="<?php echo $pre_data['pid']; ?>">
-	<input type="submit" name="submit">
-</form>
-
+<div class="new_post">
+	<form method="post" action="">
+		<input type="text" name="title" id="newpost_title" value="<?php echo $pre_data['title']; ?>" placeholder='在这里输入文章标题'>
+		<textarea name="content" id="newpost_content" rows="12" cols=""><?php echo $pre_data['content']; ?></textarea>
+		<input type="hidden" name="edit_pid" id="newpost_pid" value="<?php echo $pre_data['pid']; ?>">
+		<div class="form_row">
+			<input type="submit" name="submit" id="newpost_submit">
+		</div>
+	</form>
 </div>
 
 <?php

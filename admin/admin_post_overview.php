@@ -19,19 +19,23 @@ if($do == 'delete_post'){
 
 
 <div class="main">
-<ul>
+
+<ul class="item_list">
 <?php
 
 $list = get_post_list();
 
 foreach($list as $item){
 ?>
-<li>
-<span class="post_title"><?php echo $item['title'];?></span>
-<a href="index.php?op=new_post&edit_pid=<?php echo intval($item['pid']);?>">EDIT</a>
-<a href="index.php?op=admin_post&do=delete_post&pid=<?php echo intval($item['pid']);?>">DELETE</a>
-<a href="index.php?op=comment&do=overview&pid=<?php echo intval($item['pid']);?>">管理评论</a>
-</li>
+	<li>
+		<span class="post_title"><?php echo $item['title'];?></span>
+		<div class="operation_links">
+			<a href="../index.php?do=viewpost&pid=<?php echo intval($item['pid']); ?>">查看</a>
+			<a href="index.php?op=new_post&edit_pid=<?php echo intval($item['pid']);?>">编辑</a>
+			<a href="index.php?op=admin_post&do=delete_post&pid=<?php echo intval($item['pid']);?>">删除</a>
+			<a href="index.php?op=comment&do=overview&pid=<?php echo intval($item['pid']);?>">管理评论</a>
+		</div>
+	</li>
 
 <?php
 }

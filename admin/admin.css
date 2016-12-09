@@ -1,0 +1,146 @@
+
+*{padding:0; margin:0;}
+
+.main { padding: 0 1em;}
+
+header {
+	padding:1em 1em;
+	margin-bottom:2em;
+	background: #EEE;
+	color:#FFF;
+}
+
+	header a {
+		padding:5px 1em;
+		margin-right: 1em;
+		color:#FFF;
+		background:#0099ff;
+		border-radius: 5px;
+		text-decoration:none;
+	}
+
+
+h3 {
+	margin: 0.3em 0.6em;
+	font-size:1.3em;
+	color: #0000ff;
+}
+
+.return { 
+	display:inline-block;
+	background: #EEE;
+	color:#999;
+	border-radius:5px;
+	padding:5px 1em;
+	text-decoration:none;
+}
+
+.item_list {
+	list-style: none;
+}
+
+	.item_list li {
+		padding: 0.3em 0.6em;
+		border-top: 1px dashed #CCC;
+	}
+	.item_list li:hover {background: #F0F0FF;}
+	.item_list .operation_links {
+		float: right;
+		font-size: 0.8em;
+		line-height: 1.2em;
+	}
+		.item_list a {
+			margin-right: 0.6em;
+			color:#AAA;
+			text-decoration: none;
+		}
+
+
+
+.new_post{
+	background:#F0F0F0;
+	border: 1px solid #CCC;
+	border-radius: 1em;
+	padding:2em 2em 1em 2em;
+	width:800px;
+	margin: 0 auto;
+}
+
+	#newpost_title {
+		display: block;
+		width:100%;
+		line-height: 1.8em;
+		padding:0 6px;
+		font-size:1.2em;
+		box-sizing:border-box;
+		margin-bottom:0.6em;
+		border-radius: 5px;
+		border: 1px #CCC solid;
+	}
+	#newpost_content{
+		display: block;
+		width:100%;
+		line-height: 1.2em;
+		padding: 0.3em 6px;
+		font-size:1em;
+		box-sizing:border-box;
+		margin-bottom:1em;
+		border-radius: 5px;
+		border: 1px #CCC solid;
+	}
+	.form_row {
+		width:100%;
+		box-sizing: border-box;
+		height: 2em;
+	}
+	#newpost_submit {
+		display:inline-block;
+		float: right;
+		width:6em;
+		line-height: 2em;
+		background:#0099ff;
+		border-radius: 5px;
+		border: none;
+		font-size: 1.1em;
+		color:#FFF;
+	}
+
+
+.login_main {
+	width:400px;
+	background:#F0F0F0;
+	border:1px #CCC solid;
+	padding: 2em;
+	box-sizing:border-box;
+	margin: 3em auto;
+}
+	.login_main h3 {
+		font-size:1.4em;
+		font-weight: normal;
+		color:#999;
+		margin-bottom:18px;
+		text-align:center;
+	}
+	#login_pw {
+		display: block;
+		width:300px;
+		line-height:1.8em;
+		font-size:1.2em;
+		border: 1px #CCC solid;
+		margin: 0 auto 1em auto;
+	}
+	.login_main .submit {
+		display: block;
+		width:300px;
+		margin: 0 auto;
+		line-height:2em;
+		font-size:1.1em;
+		background: #0099ff;
+		color:#FFF;
+		border: none;
+		text-align: center;
+		text-decoration:none;
+	}
+
+
+
