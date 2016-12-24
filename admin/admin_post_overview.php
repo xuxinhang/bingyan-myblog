@@ -23,7 +23,7 @@ if($do == 'delete_post'){
 <ul class="item_list">
 <?php
 
-$list = get_post_list();
+$list = get_post_list(null, null, 0);
 
 foreach($list as $item){
 ?>

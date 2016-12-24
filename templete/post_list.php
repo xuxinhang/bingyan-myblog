@@ -52,7 +52,7 @@ foreach ($post_list as $post_info){
 				</a>
 			</h3>
 			<div class="post_time"><?php echo transTime($post_info['timestamp']);?></div>
-			<div class="dot_btn"></div>
+			<div class="dot_btn"><?php echo $post_info['comment_counter']; ?></div>
 		</div>
 		<div class="post_block">
 			<p class="post_part"><?php echo $post_info['content'];?></p>

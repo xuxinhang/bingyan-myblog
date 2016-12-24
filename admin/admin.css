@@ -35,6 +35,20 @@ h3 {
 	text-decoration:none;
 }
 
+.button {
+	line-height: 1.6em;
+	background:#FCFCFC;
+	color:#666;
+	border: 1px solid #999;
+	font-size: 1.1em;
+	border-radius: 5px;
+}
+.button.submit {
+	background:#0099ff;
+	border-radius: 5px;
+	color:#FFF;
+}
+
 .item_list {
 	list-style: none;
 }
@@ -105,6 +119,37 @@ h3 {
 		color:#FFF;
 	}
 
+.new_post .extra_functions {
+	padding:0;
+	margin-top: 2em;
+}
+	
+.new_post .extra_functions .function_title {
+	position:absolute;
+	top:0; left:0;
+	font-size: 1.0em;
+	line-height: 1.4em;
+	background: #0099FF;
+	color: #FFF;
+	padding: 0 5px;
+	border-radius: 0 0 5px 0;
+}
+
+	.new_post .function_area {
+		position: relative;
+		background:#FFF;
+		border: 1px #0099FF solid;
+		border-radius: 5px;
+		padding: 1.4em 0.3em 0.3em; 
+		margin:0.6em 0 ;
+		overflow: hidden;
+	}
+	
+
+
+
+
+/*** Login Page ***/
 
 .login_main {
 	width:400px;

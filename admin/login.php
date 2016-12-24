@@ -39,8 +39,9 @@ if(isset($_SESSION['password']) && $_SESSION['password'] == '123'){
 			//echo 'Success!'
 	?>
 	<div class="login_main">
-		<h3>新登录</h3>
-		<a href="index.php" class="submit">进入后台</a>
+		<h3>一次新的登录</h3>
+		<a href="index.php" class="submit">正在进入后台</a>
+		<script>window.location.href="index.php"; </script> 
 	</div>
 	<?php
 		}else{

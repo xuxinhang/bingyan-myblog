@@ -2,10 +2,12 @@
 <html>
  <head>
 	<link rel="stylesheet" href="./templete/main.css">
-	<script src="lib/zepto.js"></script>
+	<script src="templete/lib/zepto.js"></script>
+	<script src="templete/common.js"></script>
+	<link rel="stylesheet" href="templete/main.css">
+	<link rel="stylesheet" href="templete/lib/css/font-awesome.min.css">
   <meta charset="UTF-8">
   <title></title>
-<link rel="stylesheet" href="main.css">
  </head>
  <body>
 

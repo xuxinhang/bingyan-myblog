@@ -1,15 +1,13 @@
 <?php
-
 include 'ajax_common.php';
 
-$title = $_POST['title'];
-$content = $_POST['content'];
+$title = strip_tags($_POST['title']);
+$content = strip_tags($_POST['content']);
 $pid = intval($_POST['pid']);
 //some filters needed
 $op = $_GET['op'];
 
 if($op="newcomment"){
-
 	$add_result = add_comment($pid, $title, $content);
 	if($add_result){
 		echo "{success:1}";
@@ -17,9 +15,7 @@ if($op="newcomment"){
 		echo "{success:0}";
 	}
 }else{
-
 	//undefined operation.
-
 }
 
 
