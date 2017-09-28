@@ -1,0 +1,28 @@
+@import "_base.scss";
+
+body, html {
+  height: 100%;
+  width: 100%;
+}
+#app {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  position: relative;
+  background: #e9efe3;
+}
+
+.top-bar {
+  height: 1rem;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  background: url(../image/top.png) 0 0 no-repeat;
+  background-size: 100% auto;
+}
+
+#body-container {
+ 
+}
